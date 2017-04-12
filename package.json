@@ -1,0 +1,31 @@
+{
+  "name": "toodoo-front",
+  "version": "1.0.0",
+  "description": "Toodo-rg for Ruby Garage",
+  "main": "app/app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dzemlianoi/toodoo-rg-front.git"
+  },
+  "author": "Denis Zemlianoi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dzemlianoi/toodoo-rg-front/issues"
+  },
+  "homepage": "https://github.com/Dzemlianoi/toodoo-rg-front",
+  "devDependencies": {
+    "angular": "1.5.x",
+    "angular-animate": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "http-server": "^0.9.0",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "scripts": {
+    "bundle": "webpack",
+    "starting": "webpack-dev-server --content-base build/",
+    "start": "http-server ./app -a localhost -p 8000 -c-1"
+  }
+}
