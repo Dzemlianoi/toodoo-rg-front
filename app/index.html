@@ -3,17 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title>Toodoo-rg</title>
+    <script src="js/underscore.js"></script>
     <script src="js/bundle.js"></script>
+    <script src="js/modules/underscore.module.js"></script>
+    <script src="js/modules/todo.module.js"></script>
+    <script src="js/controllers/projectsCtrl.js"></script>
+    <script src="js/controllers/tasksCtrl.js"></script>
+    <script src="js/controllers/commentsCtrl.js"></script>
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-app="todoApp">
+<body ng-app="todo">
     <h1 id="project-name">ToDo Ruby Garage</h1>
-    <div ng-controller="todoCtrl">
+    <div ng-controller="projectsCtrl">
         <section class="task-list" ng-repeat="project in projects">
             <div class = "task-list-name">
                 <div>{{project.title}}</div>
-                <div>
+                <div ng-click="deleteProject(project.id)">
                     <button class="destroy"></button>
                 </div>
             </div>
@@ -65,7 +71,7 @@
     </div>
     <button class="todo-add">
         <i class="fa fa-plus view"></i>
-        <span> Add new task list</span>
+        <span> Add new task list </span>
     </button>
 </body>
 </html>
