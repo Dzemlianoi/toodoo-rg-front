@@ -20,11 +20,12 @@
     "angular-resource": "1.5.x",
     "angular-route": "1.5.x",
     "http-server": "^0.9.0",
+    "underscore": "^1.8.3",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
-    "bundle": "webpack",
+    "bundle": "webpack --display-error-details",
     "starting": "webpack-dev-server --content-base build/",
     "start": "http-server ./app -a localhost -p 8000 -c-1"
   }
