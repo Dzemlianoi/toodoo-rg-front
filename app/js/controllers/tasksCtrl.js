@@ -3,7 +3,7 @@ angular.module('todo').controller('tasksCtrl', ['$scope', '$http', function($sco
         method: 'GET',
         url: "http://toodoo-rg.herokuapp.com/tasks",
         data: { project_id: '????' }
-    }
+    };
     $http(request).then(function (response) {
         $scope.tasks = response.data;
     });
