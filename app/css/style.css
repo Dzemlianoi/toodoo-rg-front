@@ -121,11 +121,11 @@ input[type="checkbox"].toggle {
 }
 
 .task-list-name div:first-child {
-    width:calc(100% - 45px);
+    width:calc(100% - 100px);
 }
 
 .task-list-name div:last-child {
-    width: 34px;
+    width: 70px;
 }
 
 .new-todo,
@@ -307,10 +307,30 @@ label[for='toggle-all'] {
     width:65%;
 }
 
+.project-panel i{
+    font-size: 25px;
+    display: none;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+}
+
+.project-panel i:hover{
+    cursor: pointer;
+}
+
+
+.task-list-name:hover {
+    color: whitesmoke;
+}
+
+.task-list-name:hover i{
+    display: inline;
+}
+
 .comments {
     display: none;
     color: #cc9a9a;
-    font-size: 19px;
 }
 
 .comments:hover {
