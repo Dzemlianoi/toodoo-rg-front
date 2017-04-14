@@ -7,9 +7,13 @@
     <script src="js/bundle.js"></script>
     <script src="js/modules/underscore.module.js"></script>
     <script src="js/modules/todo.module.js"></script>
-    <script src="js/app.config.js"></script>
+    <script src="js/config/auth.config.js"></script>
+    <script src="js/config/state.config.js"></script>
     <script src="js/factories/project.js"></script>
     <script src="js/factories/task.js"></script>
+    <script src="js/controllers/signinCtrl.js"></script>
+    <script src="js/controllers/signupCtrl.js"></script>
+    <script src="js/controllers/projectsCtrl.js"></script>
     <script src="js/controllers/projectsCtrl.js"></script>
     <script src="js/controllers/tasksCtrl.js"></script>
     <script src="js/controllers/commentsCtrl.js"></script>
@@ -18,6 +22,7 @@
 </head>
 <body ng-app="todo">
     <h1 id="project-name">ToDo Ruby Garage</h1>
-    <ng-view></ng-view>
+    <flash-message></flash-message>
+    <div ui-view></div>
 </body>
 </html>
