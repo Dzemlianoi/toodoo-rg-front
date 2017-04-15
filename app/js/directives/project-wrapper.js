@@ -4,7 +4,7 @@ app.directive('projectWrapper', function() {
     return {
         scope: {
             'project': '=',
-            'deleteProject': '='
+            'delete': '='
         },
         templateUrl: 'js/views/project-wrapper.html',
         controller: ['$scope', 'Task', 'Project', 'Flash', function ($scope, Task, Project, Flash) {
