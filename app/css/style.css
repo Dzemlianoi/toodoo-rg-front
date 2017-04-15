@@ -177,7 +177,7 @@ input[type="checkbox"].toggle, input {
 .edit {
     position: relative;
     margin: 0;
-    width: 100%;
+    width: 85%;
     font-size: 24px;
     font-family: inherit;
     font-weight: inherit;
@@ -192,6 +192,21 @@ input[type="checkbox"].toggle, input {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
+}
+
+.todo-form .fa {
+    display: none
+}
+
+.new-todo:focus + i {
+    display: inline;
+    font-size: 35px;
+    color: #af5b5e;
+    vertical-align: middle;
+}
+
+.new-todo:focus + i:hover {
+    cursor: pointer;
 }
 
 .new-todo {
