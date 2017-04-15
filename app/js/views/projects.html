@@ -1,5 +1,5 @@
 <div ng-controller="projectsCtrl">
-    <project-wrapper ng-repeat="project in projects" project="project"></project-wrapper>
+    <project-wrapper ng-repeat="project in projects" deleteProject="deleteProject" project="project"></project-wrapper>
     <div ng-controller="signinCtrl">
         <button class="todo-add todo-butts" ng-click="addProject()">
             <i class="fa fa-plus view"></i>
