@@ -30,7 +30,8 @@ app.directive('projectWrapper', function() {
                             project.title = $scope.edited_input_title;
                             Flash.create('danger', 'Title ' + reason.data.title.join('.<br/> Title '));
                         }
-                    })
+                    }
+                )
             };
 
             $scope.renameProjectByEnter = function(project, keyEvent) {
