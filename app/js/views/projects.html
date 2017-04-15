@@ -1,57 +1,5 @@
 <div ng-controller="projectsCtrl">
-    <section class="task-list" ng-repeat="project in projects">
-        <div class = "task-list-name">
-            <div class = "i-b">{{project.title}}</div>
-            <div class = "i-b project-panel" >
-                <i class="fa fa-pencil"></i>
-                <i ng-click="deleteProject(project)" class="fa fa-close"></i>
-            </div>
-        </div>
-        <div class = todoapp>
-            <header class="header">
-                <form class="todo-form">
-                    <input class="new-todo" placeholder="What needs to be done?" ng-model="test">
-                </form>
-            </header>
-            <section class="main">
-                <ul ng-controller="tasksCtrl" class="todo-list" projectid="{{project.id}}">
-                    <li ng-repeat="task in tasks" ng-class="{ completed: task.completed }">
-                        <div class="view">
-                            <input class="toggle" type="checkbox" ng-model="task.completed">
-                            <div class = "title-task i-b">
-                                <label>{{task.title}}</label>
-                            </div>
-                            <div class = "i-b">
-                                <i class="comments fa fa-chevron-up"></i>
-                                <i class="comments fa fa-chevron-down"></i>
-                                <i class="comments fa fa-clock-o"></i>
-                                <i class="comments fa fa-comment-o"></i>
-                                <i class="comments fa fa-close"></i>
-                            </div>
-                        </div>
-                        <form>
-                            <input class="edit">
-                        </form>
-                    </li>
-                </ul>
-            </section>
-            <footer class="footer" >
-                <span class="todo-count">Tasks count <strong>2</strong></span>
-                <ul class="filters">
-                    <li>
-                        <a href="#">All</a>
-                    </li>
-                    <li>
-                        <a href="#active">Active</a>
-                    </li>
-                    <li>
-                        <a href="#completed">Completed</a>
-                    </li>
-                </ul>
-                <button class="clear-completed">Clear completed</button>
-            </footer>
-        </div>
-    </section>
+    <project-wrapper ng-repeat="project in projects" project="project"></project-wrapper>
     <div ng-controller="signinCtrl">
         <button class="todo-add todo-butts" ng-click="addProject()">
             <i class="fa fa-plus view"></i>
