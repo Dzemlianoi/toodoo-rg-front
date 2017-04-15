@@ -195,17 +195,15 @@ input[type="checkbox"].toggle, input {
 }
 
 .todo-form .fa {
-    display: none;
-}
-
-.new-todo:focus + i {
-    display: inline;
     font-size: 35px;
     color: #af5b5e;
     vertical-align: middle;
 }
 
-.new-todo:focus + i:hover {
+.new-todo:focus + i:hover,
+.view:hover i,
+.project-panel i:hover,
+button.todo-add:hover {
     cursor: pointer;
 }
 
@@ -364,7 +362,7 @@ label[for='toggle-all'] {
 }
 
 .todo-list .title-task{
-    width:65%;
+    width:63%;
 }
 
 .project-panel i{
@@ -373,10 +371,6 @@ label[for='toggle-all'] {
     vertical-align: middle;
     position: relative;
     top: -4px;
-}
-
-.project-panel i:hover{
-    cursor: pointer;
 }
 
 input.i-b:read-only + .project-panel >.fa-check {
@@ -501,11 +495,6 @@ button.todo-add {
     background-color: #af5b5e;
     color: whitesmoke;
 }
-
-button.todo-add:hover {
-    cursor: pointer;
-}
-
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     #toggle-all,

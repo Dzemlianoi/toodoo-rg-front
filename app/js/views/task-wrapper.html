@@ -1,18 +1,43 @@
-<li>
-    <div class="view">
-        <input class="toggle" type="checkbox" ng-model="task.completed">
-        <div class = "title-task i-b">
-            <label>{{task.title}}</label>
-        </div>
-        <div class = "i-b">
-            <i class="comments fa fa-chevron-up"></i>
-            <i class="comments fa fa-chevron-down"></i>
-            <i class="comments fa fa-clock-o"></i>
-            <i class="comments fa fa-comment-o"></i>
-            <i class="comments fa fa-close"></i>
-        </div>
-    </div>
-    <form>
-        <input class="edit">
+<header class="header">
+    <form class="todo-form">
+        <input class="new-todo" placeholder="What needs to be done?" ng-keypress="addTaskByEnter(task, $event)" ng-model="task_title">
+        <i ng-click="addTask()" class="fa fa-plus-circle"></i>
     </form>
-</li>
+</header>
+<section class="main">
+    <ul class="todo-list">
+        <li ng-repeat="task in tasks" ng-class="{ completed: task.completed }">
+            <div class="view">
+                <input class="toggle" type="checkbox" ng-click="updateComplitiion(task)" ng-model="task.completed">
+                <div class = "title-task i-b">
+                    <label>{{task.title}}</label>
+                </div>
+                <div class = "i-b">
+                    <i class="comments fa fa-chevron-up"></i>
+                    <i class="comments fa fa-chevron-down"></i>
+                    <i class="comments fa fa-clock-o"></i>
+                    <i class="comments fa fa-comment-o"></i>
+                    <i ng-click="removeTask(task)" class="comments fa fa-close"></i>
+                </div>
+            </div>
+            <form>
+                <input class="edit">
+            </form>
+        </li>
+    </ul>
+</section>
+<footer class="footer" >
+    <span class="todo-count">Tasks count <strong>2</strong></span>
+    <ul class="filters">
+        <li>
+            <a href="#">All</a>
+        </li>
+        <li>
+            <a href="#active">Active</a>
+        </li>
+        <li>
+            <a href="#completed">Completed</a>
+        </li>
+    </ul>
+    <button class="clear-completed">Clear completed</button>
+</footer>

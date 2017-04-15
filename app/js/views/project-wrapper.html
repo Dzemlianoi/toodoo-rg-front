@@ -8,31 +8,6 @@
         </div>
     </div>
     <div class = "todoapp" ng-controller="tasksCtrl">
-        <header class="header">
-            <form class="todo-form">
-                <input class="new-todo" placeholder="What needs to be done?" ng-model="test">
-                <i class="fa fa-plus-circle"></i>
-            </form>
-        </header>
-        <section class="main">
-            <ul class="todo-list">
-                <task-wrapper ng-repeat="task in tasks" task="task"></task-wrapper>
-            </ul>
-        </section>
-        <footer class="footer" >
-            <span class="todo-count">Tasks count <strong>2</strong></span>
-            <ul class="filters">
-                <li>
-                    <a href="#">All</a>
-                </li>
-                <li>
-                    <a href="#active">Active</a>
-                </li>
-                <li>
-                    <a href="#completed">Completed</a>
-                </li>
-            </ul>
-            <button class="clear-completed">Clear completed</button>
-        </footer>
+        <task-wrapper tasks="tasks" project="project"></task-wrapper>
     </div>
 </section>
