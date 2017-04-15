@@ -45,7 +45,7 @@ body {
 }
 
 button,
-input[type="checkbox"].toggle {
+input[type="checkbox"].toggle, input {
     outline: none;
 }
 
@@ -133,6 +133,7 @@ input[type="checkbox"].toggle {
 
 .task-list .task-list-name {
     width: 100%;
+    height: 45px;
     font-size: 38px;
     font-weight: 100;
     text-align: center;
@@ -156,6 +157,12 @@ input[type="checkbox"].toggle {
 .task-list-name div {
     display: inline-block;
     vertical-align: middle;
+}
+
+.task-list-name input {
+    background: none;
+    text-align: center;
+    border: none;
 }
 
 .task-list-name div:first-child {
@@ -357,6 +364,18 @@ label[for='toggle-all'] {
     cursor: pointer;
 }
 
+input.i-b:read-only + .project-panel >.fa-check {
+    display: none;
+}
+
+input.i-b:read-write + .project-panel >.fa-pencil,
+input.i-b:read-write + .project-panel >.fa-close {
+    display: none;
+}
+
+.fa-check {
+    display: inline;
+}
 
 .task-list-name:hover {
     color: whitesmoke;
