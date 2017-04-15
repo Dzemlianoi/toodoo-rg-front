@@ -195,7 +195,7 @@ input[type="checkbox"].toggle, input {
 }
 
 .todo-form .fa {
-    display: none
+    display: none;
 }
 
 .new-todo:focus + i {

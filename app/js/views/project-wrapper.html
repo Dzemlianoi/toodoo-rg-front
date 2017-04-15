@@ -7,15 +7,16 @@
             <i ng-click="deleteProject(project)" class="fa fa-close"></i>
         </div>
     </div>
-    <div class = "todoapp">
+    <div class = "todoapp" ng-controller="tasksCtrl">
         <header class="header">
             <form class="todo-form">
                 <input class="new-todo" placeholder="What needs to be done?" ng-model="test">
+                <i class="fa fa-plus-circle"></i>
             </form>
         </header>
         <section class="main">
-            <ul ng-controller="tasksCtrl" class="todo-list">
-                <task-wrapper ng-repeat="task in tasks" task="task" project="project" ng-class="{ completed: task.completed }"></task-wrapper>
+            <ul class="todo-list">
+                <task-wrapper ng-repeat="task in tasks" task="task"></task-wrapper>
             </ul>
         </section>
         <footer class="footer" >
@@ -31,7 +32,7 @@
                     <a href="#completed">Completed</a>
                 </li>
             </ul>
-            <button ng-click="test()" class="clear-completed">Clear completed</button>
+            <button class="clear-completed">Clear completed</button>
         </footer>
     </div>
 </section>
