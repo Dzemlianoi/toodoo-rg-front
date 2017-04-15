@@ -3,6 +3,6 @@ angular.module('todo').controller('tasksCtrl', [
     '$http',
     'Task',
     function($scope, $http, Task) {
-        $scope.tasks = Task.index({ project_id: '????' });
+
     }
 ]);
