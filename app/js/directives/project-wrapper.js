@@ -8,7 +8,7 @@ app.directive('projectWrapper', function() {
         },
         templateUrl: 'js/views/project-wrapper.html',
         controller: ['$scope', 'Task', 'Project', 'Flash', function ($scope, Task, Project, Flash) {
-            $scope.tasks = Task.index({ project_id: $scope.project.id });
+            $scope.tasks = $scope.project.tasks;
 
             $scope.editProject = function(project) {
                 $scope.edited_input = angular.element(document.querySelector('#project' + project.id + ' input'));
