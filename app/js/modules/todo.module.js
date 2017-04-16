@@ -4,5 +4,6 @@ var todo = angular.module('todo', [
     'ui.router',
     'underscore',
     'ngResource',
-    'ngFlash'
+    'ngFlash',
+    'ngDialog'
 ]);
