@@ -371,6 +371,26 @@ label[for='toggle-all'] {
     width:63%;
 }
 
+.title-task:read-only + .i-b .fa-pencil {
+    display:none;
+}
+
+li:hover .title-task:read-only + .i-b .fa {
+    display: inline-block;
+}
+
+li:hover .title-task:read-write + .i-b .fa {
+    display: none;
+}
+
+li:hover .title-task:read-only + .i-b .fa-check {
+    display: none;
+}
+
+li:hover .title-task:read-write + .i-b .fa-check {
+    display: inline-block;
+}
+
 .project-panel i{
     font-size: 25px;
     display: none;
@@ -413,7 +433,7 @@ input.i-b:read-write + .project-panel >.fa-close {
     display: inline;
 }
 
-.todo-list li:hover .ordering-icons i {
+section.main .todo-list li:hover .title-task:read-only + .i-b > .ordering-icons i {
     display: block;
 }
 
