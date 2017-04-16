@@ -5,5 +5,6 @@ var todo = angular.module('todo', [
     'underscore',
     'ngResource',
     'ngFlash',
-    'ngDialog'
+    'ngDialog',
+    'ngFileUpload'
 ]);

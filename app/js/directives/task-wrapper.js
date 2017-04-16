@@ -9,7 +9,7 @@ app.directive('taskWrapper', function() {
         templateUrl: 'js/views/directives/task-wrapper.html',
         controller: ['$scope', 'Task', 'Flash', 'ngDialog', function ($scope, Task, Flash, ngDialog) {
             $scope.addTask = function () {
-                Task.create({project_id: $scope.project.id, title: $scope.task_title},
+                Task.create({ project_id: $scope.project.id, title: $scope.task_title },
                     function (response) {
                         $scope.tasks.push(response);
                         $scope.task_title = '';
@@ -26,8 +26,8 @@ app.directive('taskWrapper', function() {
                 })
             };
 
-            $scope.updateComplited = function (task) {
-                Task.update({id: task.id, completed: task.completed}, function (response) {
+            $scope.updateCompleted = function (task) {
+                Task.update({ id: task.id, completed: task.completed }, function (response) {
                     task = response;
                 })
             };
@@ -87,8 +87,7 @@ app.directive('taskWrapper', function() {
             };
 
             $scope.isCompleted = function(task) {
-                console.log(task);
-                return task.complited ? 'Yes' : 'No';
+                return task.completed ? 'Yes' : 'No';
             };
 
             $scope.openTab = function(task){

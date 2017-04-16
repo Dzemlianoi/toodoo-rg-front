@@ -429,6 +429,14 @@ input.i-b:read-write + .project-panel >.fa-close {
     color: #af5b5e;
 }
 
+.comments-wrapper {
+    text-align: left;
+}
+
+.comments-wrapper:last-child {
+    margin-bottom: 12px;
+}
+
 .todo-list li:hover .comments{
     display: inline;
 }
@@ -550,6 +558,7 @@ button.todo-add {
 }
 .info-fieldset:last-of-type {
     border-bottom: 1px solid lightgray;
+    padding-bottom: 12px;
 }
 
 .info-name, .info-value{
@@ -564,11 +573,78 @@ button.todo-add {
     font-size:24px;
 }
 
+.all-comments-area .comment-text input {
+    padding: 15px;
+    height: 50px;
+    border: none;
+    width: 90%;
+}
+
+.all-comments-area .comment-text {
+    display: inline-block;
+    margin: 0 0 20px 12px;
+    width: 75%;
+    height: 50px;
+}
+
+.comment-text .fa-close {
+    position: relative;
+    font-size: 22px;
+    bottom: 22px;
+    color: #af5b5e;
+}
+
+.comment-text .fa-close:hover {
+    cursor: pointer;
+}
+
+.comment-buttons{
+    vertical-align: middle;
+}
+
+.file-button{
+    background: whitesmoke;
+    color: #af5b5e;
+    border: 1px solid #af5b5e;
+    font-size:22px;
+    margin-bottom: 15px;
+    padding:7px;
+}
+
+.file-button:hover {
+    cursor: pointer;
+}
+
+.comment-attachment {
+    display: inline-block;
+    vertical-align: middle;
+    border-color: #af5b5e;
+    border: 1px solid #af5b5e;
+    width: 17%;
+}
+
+.comment-attachment a {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.comment-attachment i {
+    color: #af5b5e;
+    font-size: 32px;
+}
+
 .comment-area {
     display: inline-block;
-    min-height: 80px;
+    min-height: 115px;
     width: 60%;
     vertical-align: middle;
+    resize: vertical;
+    font-size: 19px;
+    padding: 15px;
+    border: 0;
+    margin-right: 12px;
 }
 
 .comment-add-button {

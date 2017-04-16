@@ -9,7 +9,7 @@
         <li ng-repeat="task in tasks | orderBy: 'priority'" ng-class="{ completed: task.completed }">
             <div>{{ window._.last(tasks) }}</div>
             <div class="view" id="task{{task.id}}">
-                <input class="toggle" type="checkbox" ng-click="updateComplitiion(task)" ng-model="task.completed">
+                <input class="toggle" type="checkbox" ng-click="updateCompleted(task)" ng-model="task.completed">
                 <input class = "title-task i-b" readonly ng-model="task.title" ng-keypress="renameTaskByEnter(task, $event)">
                 <div class = "i-b">
                     <div class="ordering-icons">
