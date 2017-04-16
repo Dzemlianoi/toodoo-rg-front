@@ -6,18 +6,19 @@
 </header>
 <section class="main">
     <ul class="todo-list">
-        <li ng-repeat="task in tasks" ng-class="{ completed: task.completed }">
+        <li ng-repeat="task in tasks | orderBy: 'priorite'" ng-class="{ completed: task.completed }">
+            <div>{{ window._.last(tasks) }}</div>
             <div class="view" id="task{{task.id}}">
                 <input class="toggle" type="checkbox" ng-click="updateComplitiion(task)" ng-model="task.completed">
                 <input class = "title-task i-b" readonly ng-model="task.title" ng-keypress="renameTaskByEnter(task, $event)">
                 <div class = "i-b">
                     <div class="ordering-icons">
-                        <i ng-click="orderUp(task)" class="comments fa fa-chevron-up"></i>
-                        <i ng-click="orderDown(task)" class="comments fa fa-chevron-down"></i>
+                        <i ng-click="orderUp(task)" ng-hide="task.priorite == 1" class="comments fa fa-chevron-up"></i>
+                        <i ng-click="orderDown(task)" ng-hide="checkArrow(task)" class="comments fa fa-chevron-down"></i>
                     </div>
                     <i ng-click="enableTitleEditing($event, task)" class="comments fa fa-pencil"></i>
                     <i ng-click="renameTask(task)" class="comments fa fa-check"></i>
-                    <i class="comments fa fa-clock-o"></i>
+                    <i ng-click="openTab(task)" class="comments fa fa-clock-o"></i>
                     <i class="comments fa fa-comment-o"></i>
                     <i ng-click="removeTask(task)" class="comments fa fa-close"></i>
                 </div>

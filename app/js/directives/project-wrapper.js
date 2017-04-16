@@ -6,7 +6,7 @@ app.directive('projectWrapper', function() {
             'project': '=',
             'delete': '='
         },
-        templateUrl: 'js/views/project-wrapper.html',
+        templateUrl: 'js/views/directives/project-wrapper.html',
         controller: ['$scope', 'Task', 'Project', 'Flash', function ($scope, Task, Project, Flash) {
             $scope.tasks = $scope.project.tasks;
 
