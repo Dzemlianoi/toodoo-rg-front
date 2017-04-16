@@ -535,6 +535,32 @@ button.todo-add {
     color: whitesmoke;
 }
 
+.info-title{
+    color: #af5b5e;
+    font-size: 50px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.info-fieldset{
+    width: 100%;
+    padding-left:20px;
+    margin-bottom: 15px;
+}
+
+.info-name, .info-value{
+    display: inline-block;
+    width: 45%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.info-name {
+    color: #af5b5e;
+    font-size:24px;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     #toggle-all,
     .todo-list li .toggle {

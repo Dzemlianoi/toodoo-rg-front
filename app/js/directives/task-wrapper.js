@@ -86,8 +86,9 @@ app.directive('taskWrapper', function() {
                 return max_task.priorite == task.priorite;
             };
 
-            $scope.openTab = function(){
-                ngDialog.open({ template: '', plain: true, className: 'ngdialog-theme-default' });
+            $scope.openTab = function(task){
+                $scope.editedTask= task;
+                ngDialog.open({ template: 'js/views/modal/task-details-modal.html', scope: $scope, task: task });
             }
         }]
     }
