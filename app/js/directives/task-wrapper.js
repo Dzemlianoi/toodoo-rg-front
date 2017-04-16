@@ -6,38 +6,89 @@ app.directive('taskWrapper', function() {
             'tasks': '=',
             'project': '='
         },
-        templateUrl: 'js/views/task-wrapper.html',
-        controller: ['$scope', 'Task', 'Flash', function ($scope, Task, Flash) {
-            $scope.addTask = function(){
-                Task.create({ project_id: $scope.project.id, title: $scope.task_title },
-                    function(response){
+        templateUrl: 'js/views/directives/task-wrapper.html',
+        controller: ['$scope', 'Task', 'Flash', 'ngDialog', function ($scope, Task, Flash, ngDialog) {
+            $scope.addTask = function () {
+                Task.create({project_id: $scope.project.id, title: $scope.task_title},
+                    function (response) {
                         $scope.tasks.push(response);
                         $scope.task_title = '';
                     },
-                    function(reason) {
-                        if (reason.data.title){
-                            Flash.create('danger', 'Title ' + reason.data.title.join('.<br/> Title '));
-                        }
+                    function (reason) {
+                        $scope.setError(reason, task)
                     }
                 )
             };
 
-            $scope.removeTask = function(task){
-                Task.delete({ id: task.id }, function(){
+            $scope.removeTask = function (task) {
+                Task.delete({id: task.id}, function () {
                     $scope.tasks = window._.without($scope.tasks, task);
                 })
             };
 
-            $scope.updateComplitiion = function(task){
-                Task.update({ id: task.id, completed: task.completed }, function(response){
+            $scope.updateComplitiion = function (task) {
+                Task.update({id: task.id, completed: task.completed}, function (response) {
                     task = response;
                 })
             };
 
-            $scope.addTaskByEnter = function(task, keyEvent) {
-                console.log(keyEvent);
+            $scope.addTaskByEnter = function (task, keyEvent) {
                 if (keyEvent.which == 13) $scope.addTask(task);
             };
+
+            $scope.enableTitleEditing = function (event, task) {
+                $scope.edited_input = angular.element(document.querySelector('#task' + task.id + ' .title-task'));
+                $scope.edited_input.removeAttr('readonly');
+                $scope.edited_input_title = task.title;
+            };
+
+            $scope.renameTaskByEnter = function (task, keyEvent) {
+                if (keyEvent.which == 13) $scope.renameTask(task);
+            };
+
+            $scope.renameTask = function (task) {
+                Task.update({id: task.id, title: task.title},
+                    function () {
+                        if ($scope.edited_input) {
+                            $scope.edited_input.attr('readonly', true);
+                            $scope.edited_input = '';
+                        }
+                        $scope.edited_input_title = '';
+                    }, function (reason) {
+                        $scope.setError(reason, task)
+                    }
+                )
+            };
+
+            $scope.setError = function (reason, task) {
+                if (reason.data.title) {
+                    task.title = $scope.edited_input_title;
+                    Flash.create('danger', 'Title ' + reason.data.title.join('.<br/> Title '));
+                }
+            };
+
+            $scope.orderDown = function (task) {
+                Task.orderDown({ task_id: task.id }, function(response){ $scope.changePriority(task, response) })
+            };
+
+            $scope.orderUp = function (task) {
+                Task.orderUp({ task_id: task.id }, function (response) { $scope.changePriority(task, response) })
+            };
+
+            $scope.changePriority = function(task, response) {
+                task.priorite = response.self_task.priorite;
+                var sided_task = window._.find($scope.tasks, { id: response.sided_task.id });
+                sided_task.priorite = response.sided_task.priorite
+            };
+
+            $scope.checkArrow = function(task){
+                var max_task = window._.last($scope.tasks);
+                return max_task.priorite == task.priorite;
+            };
+
+            $scope.openTab = function(){
+                ngDialog.open({ template: '', plain: true, className: 'ngdialog-theme-default' });
+            }
         }]
     }
 });
