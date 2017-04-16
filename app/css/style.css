@@ -548,6 +548,9 @@ button.todo-add {
     padding-left:20px;
     margin-bottom: 15px;
 }
+.info-fieldset:last-of-type {
+    border-bottom: 1px solid lightgray;
+}
 
 .info-name, .info-value{
     display: inline-block;
@@ -559,6 +562,22 @@ button.todo-add {
 .info-name {
     color: #af5b5e;
     font-size:24px;
+}
+
+.comment-area {
+    display: inline-block;
+    min-height: 80px;
+    width: 60%;
+    vertical-align: middle;
+}
+
+.comment-add-button {
+    float: right;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #af5b5e;
+    color: whitesmoke;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {

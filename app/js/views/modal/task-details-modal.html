@@ -1,18 +1,24 @@
-<h2 class="info-title">Task: {{editedTask.title}}</h2>
+<h2 class="info-title">Task: {{ editedTask.title }}</h2>
 <div class="info">
     <div class="info-fieldset info-project">
         <div class="info-name"> Project </div>
-        <div class="info-value"> {{project.title}} </div>
+        <div class="info-value"> {{ project.title }} </div>
     </div>
 
     <div class="info-fieldset info-order">
         <div class="info-name"> Order </div>
-        <div class="info-value"> {{editedTask.priorite}}/{{tasks.length}} </div>
+        <div class="info-value"> {{ editedTask.priority }}/{{ tasks.length }} </div>
     </div>
 
     <div class="info-fieldset info-deadline">
         <div class="info-name"> Deadline </div>
-        <div class="info-value"> {{editedtask.deadline}} </div>
+        <div class="info-value"> {{ editedTask.deadline }} </div>
     </div>
+
+    <div class="info-fieldset info-deadline">
+        <div class="info-name"> Completed? </div>
+        <div class="info-value"> {{ isCompleted(editedTask) }} </div>
+    </div>
+
     <comment-wrapper task="editedTask"></comment-wrapper>
 </div>

@@ -7,7 +7,8 @@ app.directive('commentWrapper', function() {
         },
         templateUrl: 'js/views/directives/comment-wrapper.html',
         controller: ['$scope', 'Comment', 'Flash', 'ngDialog', function ($scope, Comment, Flash, ngDialog) {
-            $scope.comments = Comment.index({ task_id: task.id })
+            $scope.comments = Comment.index({ task_id: $scope.task.id });
+            console.log($scope.comments);
         }]
     }
 });
