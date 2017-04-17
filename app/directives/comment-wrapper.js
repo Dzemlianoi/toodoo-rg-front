@@ -5,7 +5,7 @@ app.directive('commentWrapper', function() {
         scope: {
             'task': '='
         },
-        templateUrl: 'js/views/directives/comment-wrapper.html',
+        templateUrl: 'views/directives/comment-wrapper.html',
         controller: ['$scope', 'Comment', 'Flash', 'Upload', function ($scope, Comment, Flash, Upload) {
             $scope.comments = Comment.index({ task_id: $scope.task.id });
             $scope.addComment = function() {

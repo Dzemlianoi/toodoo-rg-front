@@ -18,19 +18,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('signin', {
             url: "/",
             controller: 'signinCtrl',
-            templateUrl: "/js/views/signin.html",
+            templateUrl: "/views/signin.html",
             resolve: unpermited
         })
         .state('signup', {
             url: "/signup",
             controller: 'signupCtrl',
-            templateUrl: "/js/views/signup.html",
+            templateUrl: "/views/signup.html",
             resolve: unpermited
         })
         .state('home', {
             url: "/todo",
             controller: 'projectsCtrl',
-            templateUrl: "/js/views/projects.html",
+            templateUrl: "/views/projects.html",
             resolve: {
                 auth: function($auth) {
                     return $auth.validateUser();

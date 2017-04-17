@@ -6,7 +6,7 @@ app.directive('taskWrapper', function() {
             'tasks': '=',
             'project': '='
         },
-        templateUrl: 'js/views/directives/task-wrapper.html',
+        templateUrl: 'views/directives/task-wrapper.html',
         controller: ['$scope', 'Task', 'Flash', 'ngDialog', function ($scope, Task, Flash, ngDialog) {
             $scope.addTask = function () {
                 Task.create({ project_id: $scope.project.id, title: $scope.task_title },
@@ -92,7 +92,7 @@ app.directive('taskWrapper', function() {
 
             $scope.openTab = function(task) {
                 $scope.editedTask = task;
-                ngDialog.open({ template: 'js/views/modal/task-details-modal.html', width: 520, scope: $scope, task: task });
+                ngDialog.open({ template: 'views/modal/task-details-modal.html', width: 520, scope: $scope, task: task });
             };
 
             $scope.saveTask = function(task) {
