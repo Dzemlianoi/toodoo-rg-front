@@ -1,8 +1,8 @@
 angular.module('todo').controller('projectsCtrl', [
     '$scope',
-    '$http',
     'Project',
-    function ($scope, $http, Project) {
+    'underscore',
+    function ($scope, Project, _) {
         $scope.projects = Project.index();
 
         $scope.addProject = function () {
@@ -12,8 +12,9 @@ angular.module('todo').controller('projectsCtrl', [
         };
 
         $scope.deleteProject = function (project) {
+            console.log(_);
             Project.delete({ id: project.id }, function () {
-                $scope.projects =  window._.without($scope.projects, project);
+                $scope.projects =  _.without($scope.projects, project);
             })
         };
 }]);

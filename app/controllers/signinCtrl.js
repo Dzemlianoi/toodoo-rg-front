@@ -6,8 +6,7 @@ app.controller('signinCtrl', [
     '$state',
     'Flash',
     function($scope, $auth, $state, Flash){
-        $scope.$on('auth:login-success', function(ev, user) {
-            Flash.clear();
+        $scope.$on('auth:login-success', function() {
             Flash.create('success', 'Log in successfully');
             $state.go('home')
         });
