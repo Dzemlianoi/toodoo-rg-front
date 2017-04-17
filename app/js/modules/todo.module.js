@@ -6,5 +6,6 @@ var todo = angular.module('todo', [
     'ngResource',
     'ngFlash',
     'ngDialog',
-    'ngFileUpload'
+    'ngFileUpload',
+    'angularjs-datetime-picker'
 ]);

@@ -15,7 +15,7 @@ app.directive('taskWrapper', function() {
                         $scope.task_title = '';
                     },
                     function (reason) {
-                        $scope.setError(reason, task)
+                        $scope.setError(reason, task);
                     }
                 )
             };
@@ -90,10 +90,24 @@ app.directive('taskWrapper', function() {
                 return task.completed ? 'Yes' : 'No';
             };
 
-            $scope.openTab = function(task){
-                $scope.editedTask= task;
+            $scope.openTab = function(task) {
+                $scope.editedTask = task;
                 ngDialog.open({ template: 'js/views/modal/task-details-modal.html', width: 520, scope: $scope, task: task });
             };
+
+            $scope.saveTask = function(task) {
+                $scope.editedDeadline = task.deadline;
+            };
+
+            $scope.updateTime = function(task) {
+                Task.update({ task_id: task.id, deadline: task.deadline },
+                    function(response){
+                        console.log(response)
+                    }, function(reason){
+                        console.log(reason);
+                    }
+                )
+            }
         }]
     }
 });

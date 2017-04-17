@@ -312,9 +312,25 @@ label[for='toggle-all'] {
     margin-bottom: 0;
 }
 
-.todo-list li.completed label {
+.todo-list li.completed input {
     color: #d9d9d9;
     text-decoration: line-through;
+}
+
+li.completed .fa-clock-o,
+li.completed .fa-pencil,
+li.completed .fa-chevron-down,
+li.completed .fa-chevron-up,
+li.completed .fa-comment-o  {
+    display: none !important;
+}
+
+.filters a.active {
+    border: 1px solid #af5b5e;
+}
+
+.filters a:hover {
+    cursor: pointer;
 }
 
 .todo-list li .destroy {
