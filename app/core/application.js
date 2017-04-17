@@ -1,4 +1,3 @@
-require('../modules/underscore.module.js');
 require('../modules/todo.module.js');
 require('../config/index.config.js');
 require('../factories/indexFactory.js');

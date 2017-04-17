@@ -9,3 +9,6 @@ require('../../node_modules/ng-file-upload/dist/ng-file-upload.js');
 require('../../node_modules/angular-animate/angular-animate.js');
 require('../../node_modules/angular-messages/angular-messages.js');
 require('../../node_modules/angular-ui-select/select.js');
+require('../../node_modules/moment/src/moment.js');
+require('../../node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.js');
+require('../../node_modules/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js');

@@ -17,6 +17,7 @@
     "angular": ">=1.4 <=1.5.3",
     "angular-animate": "1.5.3",
     "angular-aria": "1.5.3",
+    "angular-bootstrap-datetimepicker": "^1.1.4",
     "angular-cookie": "^4.1.0",
     "angular-flash-alert": "^2.4.0",
     "angular-messages": "1.5.3",

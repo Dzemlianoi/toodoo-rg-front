@@ -1,7 +1,7 @@
-var app = angular.module('todo');
+let app = angular.module('todo');
 
-app.config(['$authProvider', function($authProvider) {
-    $authProvider.configure({
-        apiUrl: 'http://localhost:3000'
-    });
+app.config(['$authProvider', function ($authProvider) {
+  $authProvider.configure({
+    apiUrl: 'http://localhost:3000'
+  });
 }]);

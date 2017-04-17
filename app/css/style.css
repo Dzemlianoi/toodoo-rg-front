@@ -582,11 +582,51 @@ button.todo-add {
     width: 45%;
     text-align: left;
     font-size: 20px;
+    vertical-align: middle;
 }
 
 .info-name {
     color: #af5b5e;
     font-size:24px;
+}
+
+.info-new-deadline .info-name {
+    width: 30%;
+}
+
+.info-new-deadline .info-value {
+    width: 56%;
+}
+
+.datetimepicker{
+    width: 100%
+}
+
+.datetimepicker {
+    height: 250px;
+}
+
+.datetimepicker .hour, .datetimepicker .day {
+    font-size: 14px;
+}
+
+.datetimepicker .hour:hover {
+    background-color: #af5b5e;
+    color:whitesmoke
+}
+
+.datetimepicker .active {
+    background-color: rgba(192, 63, 78, 0.75) !important;
+    color: white;
+}
+
+.datetimepicker .current {
+    background-color: #04c !important;
+    color:whitesmoke;
+}
+
+.datetimepicker .table td, .datetimepicker .table th {
+    padding: 0 !important;
 }
 
 .all-comments-area .comment-text input {
