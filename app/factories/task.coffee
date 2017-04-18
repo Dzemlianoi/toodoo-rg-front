@@ -1,7 +1,7 @@
 app = angular.module('todo');
 
 app.factory 'Task', ['$resource', ($resource) ->
-  $resource 'http://toodoo-rg.herokuapp.com/tasks/:id.json', { id: '@id' },
+  $resource 'http://localhost:3000/tasks/:id.json', { id: '@id' },
     index:
       method: 'GET'
       responseType: 'json'
