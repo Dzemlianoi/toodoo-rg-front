@@ -1,5 +1,5 @@
-require '../modules/todo.module.js';
-require '../config/index.config.js';
-require '../factories/indexFactory.js';
-require '../controllers/indexCtrl.js';
-require '../directives/indexDirective.js';
+require '../modules/todo.module.coffee';
+require '../config/index.config.coffee';
+require '../factories/indexFactory.coffee';
+require '../controllers/indexCtrl.coffee';
+require '../directives/indexDirective.coffee';

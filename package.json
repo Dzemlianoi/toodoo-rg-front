@@ -2,7 +2,6 @@
   "name": "toodoo-front",
   "version": "1.0.0",
   "description": "Toodo-rg for Ruby Garage",
-  "main": "app/app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Dzemlianoi/toodoo-rg-front.git"
@@ -28,6 +27,8 @@
     "angular-ui-select": "^0.12.100",
     "bootstrap": "^3.3.7",
     "bootstrap-datepicker": "1.5.1",
+    "coffee-loader": "^0.7.3",
+    "coffee-script": "^1.12.5",
     "css-loader": "^0.28.0",
     "exports-loader": "^0.6.4",
     "file-loader": "^0.11.1",

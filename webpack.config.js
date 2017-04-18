@@ -1,5 +1,5 @@
-let webpack = require('webpack');
-let path = require('path');
+var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   context: __dirname,
@@ -14,6 +14,11 @@ module.exports = {
   
   module: {
     loaders: [
+      {
+        test: /\.coffee$/,
+        loader: 'coffee-loader'
+      },
+      
       {
         test: /\.css$/,
         loaders: ["style-loader", "css-loader"]

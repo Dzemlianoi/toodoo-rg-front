@@ -1,3 +1,3 @@
-require './project.js'
-require './task.js'
-require './comment.js'
+require './project.coffee'
+require './task.coffee'
+require './comment.coffee'

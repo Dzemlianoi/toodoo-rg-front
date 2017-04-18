@@ -1,3 +1,3 @@
-require './projectsCtrl.js';
-require './signinCtrl.js';
-require './signupCtrl.js';
+require './projectsCtrl.coffee';
+require './signinCtrl.coffee';
+require './signupCtrl.coffee';

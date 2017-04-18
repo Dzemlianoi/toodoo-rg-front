@@ -1,4 +1,4 @@
-let todo = angular.module('todo', [
+todo = angular.module('todo', [
   'ipCookie',
   'ng-token-auth',
   'ui.router',
@@ -7,4 +7,4 @@ let todo = angular.module('todo', [
   'ngDialog',
   'ngFileUpload',
   'ui.bootstrap.datetimepicker'
-]);
+])

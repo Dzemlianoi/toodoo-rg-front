@@ -24,9 +24,8 @@ app.directive 'projectWrapper', () ->
         (reason) ->
           if reason.data.title
             project.title = $scope.edited_input_title
-            Flash.create('danger', 'Title ' + reason.data.title.join('.<br/> Title '))
+            Flash.create 'danger', 'Title ' + reason.data.title.join('.<br/> Title ')
 
-    $scope.renameProjectByEnter (project, keyEvent) ->
+    $scope.renameProjectByEnter = (project, keyEvent) ->
        $scope.renameProject(project) if keyEvent.which is 13
-
   ]

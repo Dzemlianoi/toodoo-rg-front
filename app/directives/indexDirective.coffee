@@ -1,3 +1,3 @@
-require './project-wrapper.js';
-require './task-wrapper.js';
-require './comment-wrapper.js';
+require './project-wrapper.coffee';
+require './task-wrapper.coffee';
+require './comment-wrapper.coffee';
