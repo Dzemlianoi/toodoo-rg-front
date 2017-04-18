@@ -10,11 +10,13 @@ app.directive 'commentWrapper', () ->
         url: 'http://localhost:3000/comments/'
         data: $scope.getData()
       )
-      added_comment.then (
+      added_comment.then(
         (response) ->
           $scope.comments.push response.data
-          $scope.comment_text = '';
+          $scope.comment_text = ''
+          $scope.file = '';
         (reason) ->
+          console.log(reason)
           Flash.create('danger', 'Text ' + reason.data.comment_text.join('.<br/> Text '))  if reason.data.comment_text
       )
 
@@ -25,6 +27,6 @@ app.directive 'commentWrapper', () ->
 
     $scope.removeComment = (comment) ->
       Comment.delete { id: comment.id }, () ->
-        $scope.comments = _.without $scope.comments, comment;
+        $scope.comments = _.without $scope.comments, comment
 
   ]
