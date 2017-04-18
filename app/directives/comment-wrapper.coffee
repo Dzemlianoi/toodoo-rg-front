@@ -16,7 +16,6 @@ app.directive 'commentWrapper', () ->
           $scope.comment_text = ''
           $scope.file = ''
         (reason) ->
-          console.log(reason)
           Flash.create('danger', 'Text ' + reason.data.comment_text.join('.<br/> Text '))  if reason.data.comment_text
       )
 
