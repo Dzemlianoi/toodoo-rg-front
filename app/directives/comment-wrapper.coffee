@@ -14,7 +14,7 @@ app.directive 'commentWrapper', () ->
         (response) ->
           $scope.comments.push response.data
           $scope.comment_text = ''
-          $scope.file = '';
+          $scope.file = ''
         (reason) ->
           console.log(reason)
           Flash.create('danger', 'Text ' + reason.data.comment_text.join('.<br/> Text '))  if reason.data.comment_text
@@ -28,5 +28,4 @@ app.directive 'commentWrapper', () ->
     $scope.removeComment = (comment) ->
       Comment.delete { id: comment.id }, () ->
         $scope.comments = _.without $scope.comments, comment
-
   ]

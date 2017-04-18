@@ -18,7 +18,7 @@ app.directive 'taskWrapper', () ->
 
       $scope.removeTask = (task) ->
         Task.delete { id: task.id }, () ->
-          $scope.tasks = _.without($scope.tasks, task)
+          $scope.tasks = window._.without($scope.tasks, task)
 
       $scope.updateCompleted = (task) ->
         Task.update { id: task.id, completed: task.completed }, (response) ->
@@ -60,11 +60,11 @@ app.directive 'taskWrapper', () ->
 
       $scope.changePriority = (task, response) ->
         task.priority = response.self_task.priority
-        sided_task = _.find $scope.tasks, { id: response.sided_task.id }
+        sided_task = window._.find $scope.tasks, { id: response.sided_task.id }
         sided_task.priority = response.sided_task.priority
 
       $scope.checkArrow = (task) ->
-        max_task = _.last($scope.tasks)
+        max_task = window._.last($scope.tasks)
         max_task.priority is task.priority
 
       $scope.isCompleted = (task) ->
