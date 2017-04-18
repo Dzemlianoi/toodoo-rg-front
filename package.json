@@ -45,6 +45,6 @@
   "scripts": {
     "prestart": "npm install",
     "bundle": "webpack --display-error-details",
-    "start": "http-server ./app -a localhost -p 8000 -c-1"
+    "start": "npm install"
   }
 }
