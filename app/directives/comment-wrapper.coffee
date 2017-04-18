@@ -1,21 +1,21 @@
-app = angular.module("todo")
-app.directive "commentWrapper", () ->
+app = angular.module('todo')
+app.directive 'commentWrapper', () ->
   scope:
-    task: "="
-  templateUrl: "views/directives/comment-wrapper.html"
-  controller: [ "$scope", "Comment", "Flash", "Upload", ($scope, Comment, Flash, Upload) ->
+    task: '='
+  templateUrl: 'views/directives/comment-wrapper.html'
+  controller: [ '$scope', 'Comment', 'Flash', 'Upload', ($scope, Comment, Flash, Upload) ->
     $scope.comments = Comment.index(task_id: $scope.task.id)
     $scope.addComment = () ->
       added_comment = Upload.upload(
-        url: "http://localhost:3000/comments/"
+        url: 'http://localhost:3000/comments/'
         data: $scope.getData()
       )
       added_comment.then (
         (response) ->
           $scope.comments.push response.data
-          $scope.comment_text = "";
+          $scope.comment_text = '';
         (reason) ->
-          Flash.create "danger", "Text " + reason.data.comment_text.join(".<br/> Text ")  if reason.data.comment_text
+          Flash.create('danger', 'Text ' + reason.data.comment_text.join('.<br/> Text '))  if reason.data.comment_text
       )
 
     $scope.getData = ->

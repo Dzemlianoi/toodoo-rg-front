@@ -68,7 +68,7 @@ app.directive 'taskWrapper', () ->
         max_task.priority is task.priority
 
       $scope.isCompleted = (task) ->
-        task.completed ? 'Yes' : 'No'
+        if task.completed then 'Yes' else 'No'
 
       $scope.openTab = (task) ->
         $scope.editedTask = task
