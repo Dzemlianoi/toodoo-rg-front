@@ -44,8 +44,8 @@
     "webpack": "^2.4.1"
   },
   "scripts": {
-    "prestart": "npm install",
     "bundle": "webpack --display-error-details",
-    "start": "npm install"
+    "start": "http-server ./app -a localhost -p 8000 -c-1",
+    "postinstall": "./node_modules/bin/webpack install"
   }
 }
