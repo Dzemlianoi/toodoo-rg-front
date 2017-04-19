@@ -41,11 +41,18 @@ module.exports = {
     ]
   },
   
+  resolve: {
+    alias: {
+      jquery: path.join(__dirname, "bower_components/jquery/dist/jquery.js"),
+      angular: path.join(__dirname, "bower_components/angular/angular.js"),
+      moment: path.join(__dirname, "bower_components/moment/moment.js"),
+    },
+  },
+  
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      jquery: 'jquery'
     })
   ]
 };
