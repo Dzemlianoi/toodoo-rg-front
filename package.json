@@ -1,6 +1,7 @@
 {
   "name": "toodoo-front",
   "version": "1.0.0",
+  "main": "server.js",
   "description": "Toodo-rg for Ruby Garage",
   "repository": {
     "type": "git",
@@ -18,25 +19,15 @@
     "coffee-script": "^1.12.5",
     "css-loader": "^0.28.0",
     "exports-loader": "^0.6.4",
+    "express": "^4.15.2",
     "file-loader": "^0.11.1",
     "html-loader": "^0.4.5",
-    "http-server": "^0.9.0",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1"
   },
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install",
-    "bundle": "webpack",
-    "go": "http-server ./app -a localhost -p 8000 -c-1"
-  },
-  "devDependencies": {
-    "webpack": "^2.4.1"
+    "heroku-postbuild": "./node_modules/bower/bin/bower install",
+    "start": "node server.js"
   }
 }
-
-
-
-
-
-
