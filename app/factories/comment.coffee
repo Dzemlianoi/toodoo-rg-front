@@ -9,6 +9,4 @@ app.factory 'Comment', ['$resource', ($resource) ->
       params: { project_id: '@project_id' }
     update:
       method: 'PUT'
-    create:
-      method: 'POST'
 ]

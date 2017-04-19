@@ -10,8 +10,6 @@ app.factory 'Task', ['$resource', ($resource) ->
         project_id: '@project_id'
     update:
       method: 'PUT'
-    create:
-      method: 'POST'
     orderUp:
       method: 'PATCH',
       url: 'http://localhost:3000/tasks/:task_id/order_up',

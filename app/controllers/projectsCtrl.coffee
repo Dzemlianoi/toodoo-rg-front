@@ -4,7 +4,7 @@ app.controller 'projectsCtrl', ['$scope', 'Project', ($scope, Project) ->
   $scope.projects = Project.index()
 
   $scope.addProject = () ->
-    Project.create { }, (project) ->
+    Project.save { }, (project) ->
       $scope.projects.push project
 
   $scope.deleteProject = (project) ->

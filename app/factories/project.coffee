@@ -8,6 +8,4 @@ app.factory 'Project', ['$resource', ($resource) ->
       responseType: 'json'
     update:
       method: 'PUT'
-    create:
-      method: 'POST'
 ]

@@ -8,7 +8,7 @@ app.directive 'taskWrapper', () ->
   controller: [ '$scope', 'Task', 'Flash', 'ngDialog', ($scope, Task, Flash, ngDialog) ->
 
       $scope.addTask = ->
-        Task.create { project_id: $scope.project.id, title: $scope.task_title },
+        Task.save { project_id: $scope.project.id, title: $scope.task_title },
           (response) ->
             $scope.tasks.push(response)
             $scope.task_title = ''
