@@ -24,7 +24,7 @@ describe 'ProjectsDirective', ->
 
   describe 'renaming', ->
     it 'should rename Project', ->
-      @http.expect('PUT', 'http://toodoo-rg.herokuapp.com/projects/1.json',
+      @http.expect('PUT', 'http://localhost:3000/projects/1.json',
         id: @scope.project.id
         title: @scope.project.title
       ).respond 200, { id: 1, title: 'First title' }
@@ -33,7 +33,7 @@ describe 'ProjectsDirective', ->
 
     it 'should clear edited title', ->
       controller_scope.edited_input_title = 'Test'
-      @http.whenPUT('http://toodoo-rg.herokuapp.com/projects/1.json').respond 200, {}
+      @http.whenPUT('http://localhost:3000/projects/1.json').respond 200, {}
       controller_scope.renameProject(@scope.project)
       @http.flush()
       expect(controller_scope.edited_input_title).toBe('')

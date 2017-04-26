@@ -13,7 +13,7 @@ describe 'ProjectsDirective', ->
     @scope.task = task
     @http.whenGET('/views/signin.html').respond(200, [])
     @http.whenGET('views/directives/comment-wrapper.html').respond(200, [])
-    @http.whenGET('http://toodoo-rg.herokuapp.com/comments.json?task_id=1').respond(200, @scope.task.comments)
+    @http.whenGET('http://localhost:3000/comments.json?task_id=1').respond(200, @scope.task.comments)
     @compile(element)(@scope)
     @scope.$digest()
     @http.flush()
@@ -27,7 +27,7 @@ describe 'ProjectsDirective', ->
     it 'add comment to comments list', ->
       controller_scope.file = 'Some file'
       controller_scope.comment_text = 'Added text'
-      @http.whenPOST('http://toodoo-rg.herokuapp.com/comments/').respond 200,
+      @http.whenPOST('http://localhost:3000/comments/').respond 200,
         id: 2
         title: 'Second comment'
       controller_scope.addComment()
@@ -38,7 +38,7 @@ describe 'ProjectsDirective', ->
 
   describe 'removing', ->
     it 'changes quantity of comments by 1', ->
-      @http.whenDELETE('http://toodoo-rg.herokuapp.com/comments/1.json').respond 200, { }
+      @http.whenDELETE('http://localhost:3000/comments/1.json').respond 200, { }
       controller_scope.removeComment(controller_scope.comments[0])
       @http.flush()
       expect(controller_scope.comments.length).toEqual(0)

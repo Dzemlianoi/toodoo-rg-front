@@ -28,7 +28,7 @@ describe 'ProjectsDirective', ->
 
     it 'add task to task list', ->
       controller_scope.task_title = 'First task'
-      @http.expect('POST', 'http://toodoo-rg.herokuapp.com/tasks.json',
+      @http.expect('POST', 'http://localhost:3000/tasks.json',
         id: @scope.project.id
         title: controller_scope.task_title
       ).respond 200, { id: 1, title: 'First title' }
@@ -39,14 +39,14 @@ describe 'ProjectsDirective', ->
 
   describe 'removing', ->
     it 'changes quantity of tasks by 1', ->
-      @http.whenDELETE('http://toodoo-rg.herokuapp.com/tasks/1.json').respond 200, { }
+      @http.whenDELETE('http://localhost:3000/tasks/1.json').respond 200, { }
       controller_scope.removeTask(@scope.tasks[0])
       @http.flush()
       expect(@scope.tasks.length).toEqual(2)
 
   describe 'updating', ->
     it 'change updating', ->
-      @http.expect('PUT', 'http://toodoo-rg.herokuapp.com/tasks/1.json',
+      @http.expect('PUT', 'http://localhost:3000/tasks/1.json',
         id: @scope.tasks[0].id
         completed: @scope.tasks[0].completed
       ).respond 200, { }
@@ -58,7 +58,7 @@ describe 'ProjectsDirective', ->
       expect(controller_scope.edited_input_title).toEqual(@scope.tasks[0].title)
 
     it 'renames task', ->
-      @http.expect('PUT', 'http://toodoo-rg.herokuapp.com/tasks/1.json',
+      @http.expect('PUT', 'http://localhost:3000/tasks/1.json',
         id: @scope.tasks[0].id
         title: @scope.tasks[0].title
       ).respond 200, { id: 1, title: 'First title' }
@@ -74,7 +74,7 @@ describe 'ProjectsDirective', ->
 
   describe 'ordering', ->
     it 'orders down', ->
-      @http.when('PATCH', 'http://toodoo-rg.herokuapp.com/tasks/' + @scope.tasks[0].id + '/order_down',
+      @http.when('PATCH', 'http://localhost:3000/tasks/' + @scope.tasks[0].id + '/order_down',
         task_id: @scope.tasks[0].id
       ).respond(200, { self_task: @scope.tasks[0], sided_task: @scope.tasks[1] })
       controller_scope.orderDown(@scope.tasks[0])
@@ -83,7 +83,7 @@ describe 'ProjectsDirective', ->
       expect(@scope.tasks[1].priority).toEqual(1)
 
     it 'orders up', ->
-      @http.when('PATCH', 'http://toodoo-rg.herokuapp.com/tasks/' + @scope.tasks[1].id + '/order_down',
+      @http.when('PATCH', 'http://localhost:3000/tasks/' + @scope.tasks[1].id + '/order_down',
         task_id: @scope.tasks[1].id
       ).respond(200, { self_task: @scope.tasks[0], sided_task: @scope.tasks[0] })
       controller_scope.orderDown(@scope.tasks[1])
@@ -117,7 +117,7 @@ describe 'ProjectsDirective', ->
       expect(controller_scope.editedDeadline).toBe(@scope.tasks[0].deadline)
 
     it 'should set deadline', ->
-      @http.when('PUT', 'http://toodoo-rg.herokuapp.com/tasks/1.json',
+      @http.when('PUT', 'http://localhost:3000/tasks/1.json',
         id: @scope.tasks[0].id,
         deadline: false
       ).respond(200, { deadline: true })
