@@ -45,12 +45,50 @@ body {
 }
 
 button,
-input[type="checkbox"].toggle {
+input[type="checkbox"].toggle, input {
     outline: none;
 }
 
 .hidden {
     display: none;
+}
+
+.sign-header {
+    background-color: #af5b5e;
+    padding: 12px 0;
+    font-size: 21px;
+    color: whitesmoke;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+.sign-content {
+    height: auto;
+    min-height: 300px;
+    background-color: white;
+}
+.sign-fields {
+    text-align: left;
+    padding: 40px 60px 20px;
+}
+
+.sign-fields .form-group {
+    min-height: 40px;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 10px;
 }
 
 .todoapp {
@@ -95,6 +133,7 @@ input[type="checkbox"].toggle {
 
 .task-list .task-list-name {
     width: 100%;
+    height: 45px;
     font-size: 38px;
     font-weight: 100;
     text-align: center;
@@ -120,19 +159,25 @@ input[type="checkbox"].toggle {
     vertical-align: middle;
 }
 
+.task-list-name input {
+    background: none;
+    text-align: center;
+    border: none;
+}
+
 .task-list-name div:first-child {
-    width:calc(100% - 45px);
+    width:calc(100% - 100px);
 }
 
 .task-list-name div:last-child {
-    width: 34px;
+    width: 70px;
 }
 
 .new-todo,
 .edit {
     position: relative;
     margin: 0;
-    width: 100%;
+    width: 85%;
     font-size: 24px;
     font-family: inherit;
     font-weight: inherit;
@@ -147,6 +192,25 @@ input[type="checkbox"].toggle {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
+}
+
+.todo-form .fa {
+    font-size: 35px;
+    color: #af5b5e;
+    vertical-align: middle;
+}
+
+.new-todo:focus + i:hover,
+.view:hover i,
+.project-panel i:hover,
+button.todo-add:hover {
+    cursor: pointer;
+}
+
+.ordering-icons {
+    display: inline-block;
+    vertical-align: middle;
+    height:50px;
 }
 
 .new-todo {
@@ -248,9 +312,25 @@ label[for='toggle-all'] {
     margin-bottom: 0;
 }
 
-.todo-list li.completed label {
+.todo-list li.completed input {
     color: #d9d9d9;
     text-decoration: line-through;
+}
+
+li.completed .fa-clock-o,
+li.completed .fa-pencil,
+li.completed .fa-chevron-down,
+li.completed .fa-chevron-up,
+li.completed .fa-comment-o  {
+    display: none !important;
+}
+
+.filters a.active {
+    border: 1px solid #af5b5e;
+}
+
+.filters a:hover {
+    cursor: pointer;
 }
 
 .todo-list li .destroy {
@@ -304,21 +384,95 @@ label[for='toggle-all'] {
 }
 
 .todo-list .title-task{
-    width:65%;
+    width:63%;
+}
+
+.title-task:read-only + .i-b .fa-pencil {
+    display:none;
+}
+
+li:hover .title-task:read-only + .i-b .fa {
+    display: inline-block;
+}
+
+li:hover .title-task:read-write + .i-b .fa {
+    display: none;
+}
+
+li:hover .title-task:read-only + .i-b .fa-check {
+    display: none;
+}
+
+li:hover .title-task:read-write + .i-b .fa-check {
+    display: inline-block;
+}
+
+.project-panel i{
+    font-size: 25px;
+    display: none;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+}
+
+input.i-b:read-only + .project-panel >.fa-check {
+    display: none;
+}
+
+input.i-b:read-write + .project-panel >.fa-pencil,
+input.i-b:read-write + .project-panel >.fa-close {
+    display: none;
+}
+
+.fa-check {
+    display: inline;
+}
+
+.task-list-name:hover {
+    color: whitesmoke;
+}
+
+.task-list-name:hover i{
+    display: inline;
 }
 
 .comments {
     display: none;
     color: #cc9a9a;
-    font-size: 19px;
 }
 
 .comments:hover {
     color: #af5b5e;
 }
 
+.comments-wrapper {
+    text-align: left;
+}
+
+.comments-wrapper:last-child {
+    margin-bottom: 12px;
+}
+
 .todo-list li:hover .comments{
     display: inline;
+}
+
+section.main .todo-list li:hover .title-task:read-only + .i-b > .ordering-icons i {
+    display: block;
+}
+
+.view .title-task {
+    height:50px;
+    vertical-align: middle;
+    padding-left:22px;
+    border:none;
+    outline: none;
+    background: none;
+}
+
+.signing{
+    width: 100%;
+    margin-top: 100px;
 }
 
 .footer {
@@ -405,6 +559,158 @@ button.todo-add {
     color: whitesmoke;
 }
 
+.info-title{
+    color: #af5b5e;
+    font-size: 50px;
+    font-weight: bold;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.info-fieldset{
+    width: 100%;
+    padding-left:20px;
+    margin-bottom: 15px;
+}
+.info-fieldset:last-of-type {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 12px;
+}
+
+.info-name, .info-value{
+    display: inline-block;
+    width: 45%;
+    text-align: left;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.info-name {
+    color: #af5b5e;
+    font-size:24px;
+}
+
+.info-new-deadline .info-name {
+    width: 30%;
+}
+
+.info-new-deadline .info-value {
+    width: 56%;
+}
+
+.datetimepicker{
+    width: 100%
+}
+
+.datetimepicker {
+    height: 250px;
+}
+
+.datetimepicker .hour, .datetimepicker .day {
+    font-size: 14px;
+}
+
+.datetimepicker .hour:hover {
+    background-color: #af5b5e;
+    color:whitesmoke
+}
+
+.datetimepicker .active {
+    background-color: rgba(192, 63, 78, 0.75) !important;
+    color: white;
+}
+
+.datetimepicker .current {
+    background-color: #04c !important;
+    color:whitesmoke;
+}
+
+.datetimepicker .table td, .datetimepicker .table th {
+    padding: 0 !important;
+}
+
+.all-comments-area .comment-text input {
+    padding: 15px;
+    height: 50px;
+    border: none;
+    width: 90%;
+}
+
+.all-comments-area .comment-text {
+    display: inline-block;
+    margin: 0 0 20px 12px;
+    width: 75%;
+    height: 50px;
+}
+
+.comment-text .fa-close {
+    position: relative;
+    font-size: 22px;
+    bottom: 22px;
+    color: #af5b5e;
+}
+
+.comment-text .fa-close:hover {
+    cursor: pointer;
+}
+
+.comment-buttons{
+    vertical-align: middle;
+}
+
+.file-button{
+    background: whitesmoke;
+    color: #af5b5e;
+    border: 1px solid #af5b5e;
+    font-size:22px;
+    margin-bottom: 15px;
+    padding:7px;
+}
+
+.file-button:hover {
+    cursor: pointer;
+}
+
+.comment-attachment {
+    display: inline-block;
+    vertical-align: middle;
+    border-color: #af5b5e;
+    border: 1px solid #af5b5e;
+    width: 17%;
+}
+
+.comment-attachment a {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.comment-attachment i {
+    color: #af5b5e;
+    font-size: 32px;
+}
+
+.comment-area {
+    display: inline-block;
+    min-height: 115px;
+    width: 60%;
+    vertical-align: middle;
+    resize: vertical;
+    font-size: 19px;
+    padding: 15px;
+    border: 0;
+    margin-right: 12px;
+}
+
+.comment-add-button {
+    float: right;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #af5b5e;
+    color: whitesmoke;
+}
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     #toggle-all,

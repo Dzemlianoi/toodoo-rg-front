@@ -1,8 +1,8 @@
 {
   "name": "toodoo-front",
   "version": "1.0.0",
+  "main": "server.js",
   "description": "Toodo-rg for Ruby Garage",
-  "main": "app/app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Dzemlianoi/toodoo-rg-front.git"
@@ -13,19 +13,31 @@
     "url": "https://github.com/Dzemlianoi/toodoo-rg-front/issues"
   },
   "homepage": "https://github.com/Dzemlianoi/toodoo-rg-front",
-  "devDependencies": {
-    "angular": "1.5.x",
-    "angular-animate": "1.5.x",
-    "angular-mocks": "1.5.x",
-    "angular-resource": "1.5.x",
-    "angular-route": "1.5.x",
-    "http-server": "^0.9.0",
-    "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+  "dependencies": {
+    "bower": "^1.8.0",
+    "coffee-loader": "^0.7.3",
+    "coffee-script": "^1.12.5",
+    "css-loader": "^0.28.0",
+    "exports-loader": "^0.6.4",
+    "express": "^4.15.2",
+    "file-loader": "^0.11.1",
+    "html-loader": "^0.4.5",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1"
   },
   "scripts": {
+    "heroku-postbuild": "./node_modules/bower/bin/bower install",
     "bundle": "webpack",
-    "starting": "webpack-dev-server --content-base build/",
-    "start": "http-server ./app -a localhost -p 8000 -c-1"
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.3",
+    "jasmine-core": "^2.6.0",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-coffee-preprocessor": "^1.0.1",
+    "karma-jasmine": "^1.1.0"
   }
 }

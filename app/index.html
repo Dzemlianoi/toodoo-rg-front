@@ -3,69 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Toodoo-rg</title>
-    <script src="js/bundle.js"></script>
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/font-awesome/css/font-awesome.css">
+    <script src="./dist/underscore.js"></script>
+    <script src="./dist/bundle.js"></script>
 </head>
-<body ng-app="todoApp">
+<body ng-app="todo">
     <h1 id="project-name">ToDo Ruby Garage</h1>
-    <div ng-controller="todoCtrl">
-        <section class="task-list" ng-repeat="project in projects">
-            <div class = "task-list-name">
-                <div>{{project.title}}</div>
-                <div>
-                    <button class="destroy"></button>
-                </div>
-            </div>
-            <div class = todoapp>
-                <header class="header">
-                    <form class="todo-form">
-                        <input class="new-todo" placeholder="What needs to be done?" ng-model="test">
-                    </form>
-                </header>
-                <section class="main">
-                    <ul class="todo-list">
-                        <li ng-repeat="task in project.tasks" ng-class="{ completed: task.completed }">
-                            <div class="view">
-                                <input class="toggle" type="checkbox" ng-model="task.completed">
-                                <div class = "title-task i-b">
-                                    <label>{{task.title}}</label>
-                                </div>
-                                <div class = "i-b">
-                                    <i class="comments fa fa-chevron-up"></i>
-                                    <i class="comments fa fa-chevron-down"></i>
-                                    <i class="comments fa fa-clock-o"></i>
-                                    <i class="comments fa fa-comment-o"></i>
-                                    <i class="comments fa fa-close"></i>
-                                </div>
-                            </div>
-                            <form>
-                                <input class="edit">
-                            </form>
-                        </li>
-                    </ul>
-                </section>
-                <footer class="footer" >
-                    <span class="todo-count">Tasks count <strong>2</strong></span>
-                    <ul class="filters">
-                        <li>
-                            <a href="#">All</a>
-                        </li>
-                        <li>
-                            <a href="#active">Active</a>
-                        </li>
-                        <li>
-                            <a href="#completed">Completed</a>
-                        </li>
-                    </ul>
-                    <button class="clear-completed">Clear completed</button>
-                </footer>
-            </div>
-        </section>
-    </div>
-    <button class="todo-add">
-        <i class="fa fa-plus view"></i>
-        <span> Add new task list</span>
-    </button>
+    <flash-message></flash-message>
+    <div ui-view></div>
 </body>
 </html>
